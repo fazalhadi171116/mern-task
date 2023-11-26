@@ -6,8 +6,7 @@ const  jwt = require('jsonwebtoken')
 const create_token = async (id)=>{
   try {
     // Set the expiration time to 10 minutes from now
-   // const expirationTime = Math.floor(Date.now() / 1000) + 10 * 60;
-    const expirationTime = Math.floor(Date.now() / 1000) + 2 * 60;
+    const expirationTime = Math.floor(Date.now() / 1000) + 10 * 60;
  const token =  await  jwt.sign({_id:id, exp:expirationTime},config.secret_jwt)
  return token
   } catch (error) {
